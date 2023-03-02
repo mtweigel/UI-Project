@@ -1,4 +1,4 @@
-# restless-thunder-9647.fly.dev  
+# https://restless-thunder-9647.fly.dev/
 
 ## Ruby on Rails Tutorial sample application
 
