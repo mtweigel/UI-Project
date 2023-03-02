@@ -16,5 +16,4 @@ options:
   redis: false
   swap:
   yjit: false
-  label:
-    fly_launch_runtime: rails
+  label: {}
