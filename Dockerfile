@@ -4,6 +4,8 @@
 ARG RUBY_VERSION=3.1.2
 FROM ruby:$RUBY_VERSION-slim as base
 
+LABEL fly_launch_runtime="rails"
+
 # Rails app lives here
 WORKDIR /rails
 
@@ -16,6 +18,17 @@ ENV RAILS_ENV="production" \
 ARG BUNDLER_VERSION=2.3.14
 RUN gem update --system --no-document && \
     gem install -N bundler -v ${BUNDLER_VERSION}
+
+# Install packages needed to install nodejs
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y curl unzip && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+# Install Node.js
+ARG NODE_VERSION=19.7.0
+RUN curl -fsSL https://fnm.vercel.app/install | bash && \
+    /root/.local/share/fnm/fnm install $NODE_VERSION
+ENV PATH=/root/.local/share/fnm/aliases/default/bin/:$PATH
 
 
 # Throw-away build stage to reduce size of final image
