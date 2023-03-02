@@ -1,4 +1,4 @@
-# https://throbbing-grass-7882.fly.dev/
+# https://restless-thunder-9647.fly.dev/
 
 ## Ruby on Rails Tutorial sample application
 
