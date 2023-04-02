@@ -1,5 +1,3 @@
-# https://throbbing-grass-7882.fly.dev/
-
 ## Ruby on Rails Tutorial sample application
 
 This is the sample application for the
